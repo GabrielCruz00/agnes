@@ -23,8 +23,8 @@
 </head>
     <body class="text-center">
         <main class="form-signin w-100 m-auto">
-            <form name="formulario" action="./accion.php" method="post" >
-            <a href="./index.html"><img class="mb-4" src="./assets/password.png" alt="" width="120" height="120"></a>
+            <form name="formulario" action="./singUp.php" method="post" >
+            <a href="./main.html"><img class="mb-4" src="./assets/password.png" alt="" width="120" height="120"></a>
                 <h1 class="h3 mb-3 fw-normal" style="color: #ffff !important;">¿Los datos son correctos?</h1>
                 <div class="form-floating">
                     <input type="text" class="form-control" id="nombre" value="<?php echo $_SESSION['nombre']; ?>" placeholder="Nombre" name="nombre" required>

@@ -25,10 +25,12 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   PRIMARY KEY (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Volcando datos para la tabla agnes.usuario: ~2 rows (aproximadamente)
+-- Volcando datos para la tabla agnes.usuario: ~3 rows (aproximadamente)
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
 INSERT INTO `usuario` (`name`, `email`, `hash`) VALUES
-	('agnes', 'agnes@agnes.com', '1234');
+	('a', 'a@a.com', '2d8463b5c3a3c6c8854a175683fe6303'),
+	('Agnes', 'agnes@agnes.com', '2d8463b5c3a3c6c8854a175683fe6303'),
+	('Gabriel', 'gabriel@gabriel.com', '647431b5ca55b04fdf3c2fce31ef1915');
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
