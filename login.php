@@ -32,22 +32,18 @@
         <h1 class="h3 mb-3 fw-normal" style="color: #ffff !important;">
         <?php
             if(!$conexion) {
-                echo "Conexion fallidad";
+                echo "Hubo un problema. Intente más tarde.";
             } else {
-                $res = $conexion -> query("SELECT * FROM usuario WHERE email='$email' AND hash = '$hash'");
+                $res = $conexion -> query("SELECT * FROM usuario WHERE email='$email' AND HASH='$hash' LIMIT 1");
+                if(!$res){
+                    echo "Hubo un problema. Intente más tarde. 1";
+                }
+                if($email = mysqli_fetch_assoc($res)){
+                    header("Location: ./blog/blog.html");
+                } else {
+                    echo "Usuario o contraseña invalidos.\nIntente nuevamente.";
+                }
 
-                $emailBD = $res -> fetch_array()["email"];
-                $hashBD = $res -> fetch_array()["hash"];
-                
-                echo $emailBD;
-                // if(!$emailBD){
-                //     echo "Cuenta no encontrada, intente nuevamente o cree una cuenta";
-                // // } elseif(($email==$emailBD) and ($hash==$hashBD)){
-                // //     header('Location: http://localhost/3.1/blog.html');
-                // } else {
-                //     echo "$email y $emailBD";
-                //     echo "$hash y $hasBD";
-                // }
             }
         ?>
         </h1>
